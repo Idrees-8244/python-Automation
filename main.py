@@ -1,16 +1,31 @@
-# This is a sample Python script.
+import pyautogui
+import time
+import pyperclip
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+#python
+#pyautogui.hotkey("alt", "tab")
+
+filenames = ['numbers.txt', 'names.txt']
+
+def gen_line(filename):
+    with open(filename) as f:
+        for line in f:
+            yield line.strip()
+
+gens = [gen_line(n) for n in filenames]
+
+for file1_line, file2_line in zip(*gens):
+    #print("\t".join([file1_line, file2_line]))
+    #print(file1_line)
+    #print(file2_line)
+    pyautogui.click(x = 1738, y = 110)
+    pyautogui.click(x = 969, y = 432)
+    pyautogui.typewrite(file1_line)
+    pyautogui.click(x = 1248, y = 436)
+    pyautogui.click(x = 948, y = 1166)
+    pyautogui.typewrite(f"Hi {file2_line}. This is Afrox. We are hiring for the role of Solderer/Repair Operator in Milpitas, CA")
+    pyautogui.press("Enter")
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/

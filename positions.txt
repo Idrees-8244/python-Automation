@@ -1,0 +1,5 @@
+for new message = (x = 1738, y = 110)
+Number entering = (x = 969, y = 432)
+message button position = (x = 1248, y = 436)
+text bar position = (x = 948, y = 1166)
+# Then click enter
